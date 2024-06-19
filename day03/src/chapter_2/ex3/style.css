@@ -1,0 +1,134 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui;
+}
+
+body {
+    background-image: url(https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80);
+    background-repeat: no-repeat;
+    background-position: center center; 
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14, 17, 24, 0.97);
+    z-index: 0;
+}
+
+.calc {
+    overflow: auto;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+    width: 300px;
+    height: 600px;
+    animation: focus-in-contract 1.0s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    padding: 15px 0px 0px 0px;
+    font-weight: 200;
+}
+
+.Grid {
+    display: grid;
+    padding: 25px;
+
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 5px;
+}
+
+button {
+    padding: 25px;
+    width: 100%;
+    background-color: white;
+    border: 0px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.75;
+}
+
+/* .back {
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+    padding: 15px;
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+    color: #fff;
+    background: #ff0037;
+    margin: 30px 0px 0px 30px;
+    text-decoration: none;
+    border: 2px solid #ff0037;
+    transition: 0.5s;
+}
+
+.back:before {
+    content: attr(data-char);
+}
+
+.back:hover {
+    background: none;
+    color: #ff0037;
+} */
+
+/* a {
+    position: static;
+    width: 5px;
+    height: 5px;
+    background-image: url('User.png');
+    padding: 20px;
+    border: 2px solid red;
+} */
+
+img {
+    position: absolute;
+    height: 100px;
+    margin: 25px 0px 0px 25px;
+    border: 3px solid red;
+    border-radius: 50%;
+}
+
+.output {
+    background-color: white;
+    color: gray;
+    grid-column: span 3; 
+    padding: 24px 17px 24px 17px;
+    border: 0px;
+    border-radius: 5px;
+}
+
+#C {
+    background-color: red;
+    color: white;
+}
+
+@keyframes focus-in-contract {
+    0% {
+      letter-spacing: 1em;
+      -webkit-filter: blur(12px);
+              filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }

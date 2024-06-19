@@ -1,0 +1,29 @@
+<div class="cont_r">
+    <header class="header">
+        <a href="/" class="logo">
+            <img src="/assets/logo.svg" alt="Logo" />
+        </a>
+        <nav>
+            <ul class="card-title">
+                <li><a href="/">Главная</a></li>
+                <li><a href="/menu">Меню</a></li>
+                <li><a href="/orders">Заказ</a></li>
+            </ul>
+        </nav>
+        <div class="buttons">
+            {{#if isAuthenticated}}
+                <form action="/logout" method="POST">
+                    <button type="submit" class="button button-primary">
+                        <img src="/assets/user.svg" alt="user" class="button-icon" />
+                        <span class="button-text">Выйти</span>
+                    </button>
+                </form>
+            {{else}}
+                <a href="/signIn" class="button button-primary">
+                    <img src="/assets/user.svg" alt="user" class="button-icon" />
+                    <span class="button-text">Войти</span>
+                </a>
+            {{/if}}
+        </div>
+    </header>
+</div>

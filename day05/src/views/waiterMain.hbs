@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    {{> head title="Main"}}
+    <body>
+      {{> header}}
+      <main>
+        <div class="cont_r">
+          <section>
+            <div class="employee-orders">
+              <h2 class="section-title">Активные заказы</h2>
+            </div>
+            <div class="cards" id="ordersList">
+                {{#each orders}}
+                    <div class="card-text">
+                        <h2 class="card-title card-title-reg">ID заказа: {{this.id}}</h2>
+                        <div class="ingredients">
+                            Блюда:
+                            <ul>
+                                {{#each this.MenuItems}}
+                                    <li class="ingredients">{{this.title}} - {{this.cost}} ₽</li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                        <p><strong>Статус заказа: {{#if this.isActive}} Активен {{else}} Завершён {{/if}}</strong></p>
+                    </div>
+                {{/each}}
+            </div>
+          </section>
+        </div>
+      </main>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    {{> head title="Order Details"}}
+    <body>
+        {{> header}}
+        <main>
+            <div class="cont_r">
+            <section class="order-details">
+                <h2 class="section-title">ID Заказа: {{order.id}}</h2>
+                <p><strong>Статус заказа: {{#if order.isActive}} Активен {{else}} Завершён {{/if}}</strong></p>
+                <table>
+                    <tbody>
+                        {{#each menuItems}}
+                        <tr>
+                            <td><img src="/assets/{{this.dataValues.picture}}" alt="{{this.dataValues.title}}" class="menu-item-image" /></td>
+                            <td>
+                                <h3 class="card-title card-title-reg">{{this.dataValues.title}}</h3>
+                                <strong class="card-price-bold">{{this.dataValues.cost}} ₽</strong>
+                            </td>
+                            
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                <p class="card-price-bold">Итоговая сумма: {{totalCost}} ₽</p>
+                {{#if order.isActive}}
+                <form action="/orders/{{order.id}}/close" method="post">
+                    <button type="submit" class="button button-primary">Закрыть заказ</button>
+                </form>
+                {{else}}
+                <p>This order is closed.</p>
+                {{/if}}
+            </section>
+            </div>
+        </main>
+    </body>
+    <script src="/js/order.js"></script>
+</html>

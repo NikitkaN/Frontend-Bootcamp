@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    {{> head title="Menu"}}
+    <body>
+      {{> header}}
+      <main class="main">
+        <div class="cont_r">
+          <section class="restaurants">
+            <div class="section-heading">
+              <h2 class="section-title">Evil kitchen</h2>
+              <div class="card-info">
+                <div class="rating">
+                  <img src="assets/star.svg" alt="star" class="star" />4.5
+                </div>
+                <div class="price">От 299 ₽</div>
+                <div class="category">All</div>
+              </div>
+            </div>
+            <div class="cards">
+            {{#each menu}}
+            <div class="card animate__animated animate__fadeInUp animate__delay-1s">
+              <img src="assets/{{this.picture}}" alt="image" class="card-image" />
+              <div class="card-text">
+                <div class="card-heading">
+                  <h3 class="card-title card-title-reg">{{this.title}}</h3>
+                </div>
+                <div class="card-info">
+                  <div class="ingredients">
+                    {{this.description}}
+                  </div>
+                </div>
+                <div class="card-buttons">
+                  <strong class="card-price-bold">{{this.calories}} ккал</strong>
+                  <strong class="card-price-bold">{{this.cost}} ₽</strong>
+                </div>
+              </div>
+            </div>
+            {{/each}}
+          </div>
+          </section>
+        </div>
+      </main>
+      {{> footer}}
+    </body>
+</html>

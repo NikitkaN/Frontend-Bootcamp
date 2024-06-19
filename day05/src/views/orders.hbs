@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    {{> head title="Orders"}}
+    <body>
+        {{> header}}
+        <main>
+            <div class="cont_r">
+                <section>
+                    <div class="order-form">
+                        <h2 class="section-title">Создать новый заказ</h2>
+                        <p><form id="orderForm">
+                            <label class="label-name" for="waiterSelect">Кто будет обслуживать:</label>
+                            <select id="waiterSelect" class="input" required>
+                                <option value="">Выберите официанта</option>
+                            </select>
+                            <p><label class="label-name" for="menuItemSelect">Выберите блюдо:</label>
+                            <select id="menuItemSelect" class="input" multiple required></select></p>
+                            <button class="button button-primary" type="submit">Создать заказ</button>
+                        </form>
+                        <div id="errorMessage" style="color: red; display: none;"></div></p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </body>
+    <script src="js/orders.js"></script>
+</html>

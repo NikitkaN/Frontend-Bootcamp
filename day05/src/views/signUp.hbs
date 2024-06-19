@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    {{> head title="SignIn"}}
+    <body>
+        <main>
+            <div class="cont_r">
+                <section>
+                    <h3 class="section-title sign-title">Регистрация</h3>
+                    <div>
+                        <form id="signupForm" class="sign-form">
+                            <div class="input_field">
+                                <input class="input" type="text" name="username" placeholder="Username" required />
+                            </div>
+                            <div class="input_field">
+                                <input class="input" type="password" name="password" placeholder="Password" required />
+                            </div>
+                            <div class="input_field">
+                                <input class="input" type="password" name="confirm_password" placeholder="Confirm Password" required />
+                            </div>
+                            <div class="input_field">
+                                <div class="input_role">
+                                    Роль:
+                                    <select name="role" class="input" required>
+                                        <option value="waiter">Официант</option>
+                                        <option value="admin">Администратор</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="error-message" class="error-message" style="color: red;"></div>
+                            <div class="sign-info">
+                                Already have an account?<br> <a href="/signIn" style="color: #1890ff;">Login</a> here.
+                            </div>
+                            <div class="sign-bottom">
+                                <button id="submitButton" class="button button-primary" type="submit">Зарегистрироваться</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </body>
+    <script src="js/signUp.js"></script>
+</html>

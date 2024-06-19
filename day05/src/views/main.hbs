@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    {{> head title="Main"}}
+    <body>
+      {{> header}}
+      <main>
+        <div class="cont_r">
+          <section>
+            <div class="employee-orders">
+              <h2 class="section-title">Проверить заказы по ID сотрудника</h2>
+              <p>
+                <input type="text" class="input input-search" id="employeeId" placeholder="Введите ID сотрудника">
+                <button id="checkOrdersButton" class="button button-primary">Проверить</button>
+              </p>
+            </div>
+            <div class="cards" id="ordersList"></div>
+          </section>
+        </div>
+      </main>
+    </body>
+    <script src="js/main.js"></script>
+</html>
